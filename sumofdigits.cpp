@@ -9,8 +9,7 @@
         //loop to find sum of digits
         do
         {
-                sum+=num%10;
-                num=num/10;
+            
         }while(num!=0);
         //output
         cout<<“\nSum of digits in given integer is: “<<sum;
