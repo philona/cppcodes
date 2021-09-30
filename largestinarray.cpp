@@ -18,7 +18,13 @@ int main()
     }
     
     int largest = arr[0];   // initialize largest to arr[0]
-    
+    for(int i=1; i<size; i++)  
+    {
+        if(arr[i]>largest)   // compare current element with largest
+        {
+            largest = arr[i];
+        }
+    }
     
     
     cout << “Largest Element in the array : “ << endl << largest;  // display result
