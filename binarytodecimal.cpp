@@ -8,7 +8,11 @@
         //converting binary to decimal
         while (n!=0)
         {
-           
+           int rem = n%10;
+            n /= 10;
+            int res = rem * pow(2,i);
+            decimal += res;
+            i++;
         }
         return decimal;
     }
