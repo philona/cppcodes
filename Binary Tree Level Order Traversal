@@ -1,0 +1,64 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+#include<queue>
+class Solution 
+{
+    public:
+        vector<vector<int>> levelOrder(TreeNode* root) 
+        {
+            vector<vector<int>>ans;
+            
+            if(root==NULL)
+                return ans;
+         
+            //creating a queue for level order traversal
+            queue<TreeNode*>q;
+            
+            //pushing the root node
+            q.push(root);
+                
+            while(!q.empty())
+            {
+                //creating a vector to store the elements at a particular level
+                vector<int>level;
+                //extracting the front node from the queue
+                TreeNode* temp= q.front();
+                q.pop();
+                
+                //storing the front node data in level
+                level.push_back(temp->val);
+                
+                //if the front node has left or right or both child push them in the queue
+                if(temp->left)
+                    q.push(temp->left);
+                
+                if(temp->right)
+                    q.push(temp->right);
+                
+                //now push all the node data at a particular level in ans vector
+                ans.push_back(level);
+            }
+            
+            //return ans
+            return ans;
+        }
+};
+
+Test Cases:
+Input: root = [3,9,20,null,null,15,7]
+Output: [[3],[9,20],[15,7]]
+
+Input: root = [1]
+Output: [[1]]
+
+Input: root = []
+Output: []
