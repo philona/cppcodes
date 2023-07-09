@@ -19,3 +19,18 @@ int main()
 
 
 }
+
+#using third variable
+
+#include<iostream>
+using namespace sstd;
+int maain()
+{
+    int a = 10, b=20,temp;
+cout<<"before swapping: "<<"value of a is: "<<a<<"value of b is: "<<b<<endl;
+
+temp=a;
+a=b;
+b=temp;
+
+cout<<"after swapping: "<<the value of a is : <<a<<"value of b is : <<endl;
